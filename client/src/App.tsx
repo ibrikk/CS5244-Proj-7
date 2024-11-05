@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 
 import "./assets/css/global.css";
 import "./App.css";
+import Cart from "./components/Cart";
 
 const App = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -29,6 +30,7 @@ const App = () => {
               path="/category/:categoryName"
               element={<CategoryPage toggleSignIn={toggleSignIn} />}
             />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </main>
         <Footer />

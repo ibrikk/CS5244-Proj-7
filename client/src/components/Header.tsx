@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ isSignedIn }) => {
               <h1>ibo.ok</h1>
             </div>
           </Link>
-          <Link to="/" className="shopping-bag">
+          <Link to="/cart" className="shopping-bag">
             <ShoppingBag color="black" />
             <span className="badge">{cartQuantity}</span>
           </Link>
