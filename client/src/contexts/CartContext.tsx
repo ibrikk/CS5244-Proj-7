@@ -1,4 +1,10 @@
-import { createContext, useReducer, Dispatch, ReactNode } from "react";
+import {
+  createContext,
+  useReducer,
+  Dispatch,
+  ReactNode,
+  useEffect,
+} from "react";
 import { cartReducer, ShoppingCartItem } from "../reducers/CartReducer";
 
 const initialCartState: ShoppingCartItem[] = [];
@@ -18,7 +24,23 @@ interface CartProviderProps {
 }
 
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
-  const [cart, dispatch] = useReducer(cartReducer, initialCartState);
+  const [cart, dispatch] = useReducer(
+    cartReducer,
+    initialCartState,
+    (initialState) => {
+      try {
+        const storedCart = JSON.parse(localStorage.getItem("cart") || "[]");
+        return (storedCart as ShoppingCartItem[]) || initialState;
+      } catch (error) {
+        console.error("Error parsing cart from localStorage", error);
+        return initialState;
+      }
+    }
+  );
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   return (
     <CartContext.Provider value={{ cart, dispatch }}>
