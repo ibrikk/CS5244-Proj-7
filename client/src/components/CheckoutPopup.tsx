@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import "../assets/css/CheckoutPopUp.css";
+import { Barcode } from "lucide-react";
 
 const CheckoutPopup: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,7 @@ const CheckoutPopup: React.FC = () => {
   return (
     <div>
       <button onClick={toggleCheckout} className="open-checkout-btn">
-        Checkout
+        Checkout &nbsp; <Barcode />
       </button>
 
       {isOpen && <div className="overlay" onClick={toggleCheckout}></div>}
