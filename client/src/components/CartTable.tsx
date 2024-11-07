@@ -3,6 +3,7 @@ import { BookItem, ShoppingCartItem } from "../Types";
 import { CartContext } from "../contexts/CartContext";
 import { CartTypes } from "../reducers/CartReducer";
 import "../assets/css/CartTable.css";
+
 import { findImageByBookId } from "../Util";
 const CartTable: React.FC = () => {
   const { cart, dispatch } = useContext(CartContext);

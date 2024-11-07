@@ -47,7 +47,7 @@ export const cartReducer = (
       }
       return state.filter((item) => item.id !== action.id);
     case CartTypes.CLEAR:
-      return state.filter((item) => item.id !== action.id);
+      return [];
     default:
       throw new Error(`Invalid action type ${action.type}`);
   }
