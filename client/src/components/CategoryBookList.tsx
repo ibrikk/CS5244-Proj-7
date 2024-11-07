@@ -44,10 +44,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ toggleSignIn }) => {
 
   return (
     <>
-      <CategoryNavBar
-        otherCategories={categoryList[0].slice(5)}
-        toggleSignIn={toggleSignIn}
-      />
+      <CategoryNavBar toggleSignIn={toggleSignIn} />
       {loading ? (
         <Spinner />
       ) : bookList.length === 0 ? (

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CategoryItem } from "../Types";
-import { CategoryContext } from "../contexts/CategoryContext"; // Update to correct path
+import { CategoryContext } from "../contexts/CategoryContext";
 
 interface HomeNavBarProps {
   toggleSignIn: () => void;

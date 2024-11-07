@@ -1,19 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import "../assets/css/CategoryBookList.css";
 import "../assets/css/global.css";
 import { CategoryItem } from "../Types";
+import { CategoryContext } from "../contexts/CategoryContext";
 
 interface CategoryNavBarProps {
-  otherCategories: CategoryItem[];
   toggleSignIn: () => void;
 }
 
-const CategoryNavBar: React.FC<CategoryNavBarProps> = ({
-  otherCategories,
-  toggleSignIn,
-}) => {
+const CategoryNavBar: React.FC<CategoryNavBarProps> = ({ toggleSignIn }) => {
   const { categoryName } = useParams();
+  const [categoryList] = useContext(CategoryContext);
 
   const isActive = (category: string) => categoryName === category;
 
@@ -26,7 +24,7 @@ const CategoryNavBar: React.FC<CategoryNavBarProps> = ({
         <span className="material-symbols-outlined search-icon">search</span>
       </div>
       <div className="homepage-categories" onClick={toggleSignIn}>
-        {otherCategories.map((category: CategoryItem) => (
+        {categoryList.map((category: CategoryItem) => (
           <Link
             key={category.categoryId}
             to={`/category/${category.name}`}
