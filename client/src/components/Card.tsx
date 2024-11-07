@@ -6,6 +6,7 @@ import "../assets/css/Home.css";
 import "../assets/css/global.css";
 import { CartTypes } from "../reducers/CartReducer";
 import { CartContext } from "../contexts/CartContext";
+import { asDollarsAndCents } from "../Util";
 
 interface CardProps {
   isHomePage: boolean;
@@ -54,7 +55,7 @@ const Card: React.FC<CardProps> = ({ book, isHomePage }) => {
         <p className="book-author">{author}</p>
       </div>
       <div className="price-add">
-        <p>${price}</p>
+        <p>{asDollarsAndCents(price)}</p>
         {!isHomePage && (
           <button
             className={`add-to-cart-btn ${isClicked ? "clicked" : ""}`}

@@ -4,7 +4,7 @@ import { CartContext } from "../contexts/CartContext";
 import { CartTypes } from "../reducers/CartReducer";
 import "../assets/css/CartTable.css";
 
-import { findImageByBookId } from "../Util";
+import { asDollarsAndCents, findImageByBookId } from "../Util";
 const CartTable: React.FC = () => {
   const { cart, dispatch } = useContext(CartContext);
 
@@ -36,7 +36,7 @@ const CartTable: React.FC = () => {
               </div>
               <div className="cart-book-title">{item.items.title}</div>
               <div className="cart-book-price">
-                ${item.items.price.toFixed(2)}
+                {asDollarsAndCents(item.items.price)}
               </div>
               <div className="cart-book-quantity">
                 <button
@@ -56,7 +56,7 @@ const CartTable: React.FC = () => {
                 </button>
               </div>
               <div className="cart-book-subtotal">
-                ${(item.quantity * item.items.price).toFixed(2)}
+                {asDollarsAndCents(item.quantity * item.items.price)}
               </div>
             </li>
             <li className="line-sep ulli"></li>

@@ -7,6 +7,7 @@ import CartTable from "./CartTable";
 import "../assets/css/Cart.css";
 import ContinueShoppingButton from "./buttons/ContinueShoppingButton";
 import ClearCartButton from "./buttons/ClearCartButton";
+import { asDollarsAndCents } from "../Util";
 
 const Cart = () => {
   const { cart, dispatch } = useContext(CartContext);
@@ -17,7 +18,7 @@ const Cart = () => {
     for (const item of cart) {
       sum += item.items.price * item.quantity;
     }
-    return sum.toFixed(2);
+    return asDollarsAndCents(sum);
   };
 
   return (
@@ -26,7 +27,7 @@ const Cart = () => {
       {cart.length !== 0 ? (
         <>
           <CartTable />
-          <div className="total">Sub-total: ${subtotal()}</div>
+          <div className="total">Sub-total: {subtotal()}</div>
           <div className="btn-container">
             <ClearCartButton onClick={() => dispatch({ type: "CLEAR" })} />
             <div>
