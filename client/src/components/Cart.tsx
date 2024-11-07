@@ -5,6 +5,7 @@ import { CartContext } from "../contexts/CartContext";
 import CheckoutPopup from "./CheckoutPopup";
 import CartTable from "./CartTable";
 import "../assets/css/Cart.css";
+import ContinueShoppingButton from "./ContinueShoppingButton";
 
 const Cart = () => {
   const { cart, dispatch } = useContext(CartContext);
@@ -24,15 +25,10 @@ const Cart = () => {
       {cart.length !== 0 ? (
         <>
           <CartTable />
-          <div className="total">Total: $ {subtotal()}</div>
+          <div className="total">Sub-total: ${subtotal()}</div>
           <div className="btn-container">
             <div>
-              <button
-                className="continue-shopping-btn"
-                onClick={() => navigate(-1)}
-              >
-                Continue Shopping &nbsp; <ShoppingBasket />
-              </button>
+              <ContinueShoppingButton onClick={() => navigate(-1)} />
             </div>
             <div>
               <button
@@ -48,7 +44,12 @@ const Cart = () => {
           </div>
         </>
       ) : (
-        <h2 className="cart-empty">Your cart is empty 🛒</h2>
+        <>
+          <h2 className="cart-empty">Your cart is empty 🛒</h2>
+          <div className="continue-shopping-btn-empty">
+            <ContinueShoppingButton onClick={() => navigate(-1)} />
+          </div>
+        </>
       )}
     </div>
   );

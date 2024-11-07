@@ -43,3 +43,9 @@
   font-weight: bold;
   padding: 1rem 1rem 0 0;
 }
+
+.continue-shopping-btn-empty {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
