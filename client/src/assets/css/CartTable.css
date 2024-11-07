@@ -28,11 +28,11 @@
   width: 100%;
 }
 
-ul {
+.cart2 {
   display: contents;
 }
 
-ul > li {
+.ulli {
   display: contents;
 }
 

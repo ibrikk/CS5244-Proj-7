@@ -19,14 +19,14 @@ const CartTable: React.FC = () => {
   return (
     <div className="cart-table">
       <ul className="cart2">
-        <li className="table-heading">
+        <li className="table-heading ulli">
           <div className="heading-book">Book</div>
           <div className="heading-price">Price / Quantity</div>
           <div className="heading-subtotal">Amount</div>
         </li>
         {cart.map((item) => (
           <React.Fragment key={item.id}>
-            <li>
+            <li className="ulli">
               <div className="cart-book-image">
                 <img
                   className="cart2"
@@ -59,7 +59,7 @@ const CartTable: React.FC = () => {
                 ${(item.quantity * item.items.price).toFixed(2)}
               </div>
             </li>
-            <li className="line-sep"></li>
+            <li className="line-sep ulli"></li>
           </React.Fragment>
         ))}
       </ul>
