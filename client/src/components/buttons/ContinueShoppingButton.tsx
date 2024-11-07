@@ -1,5 +1,5 @@
 import { ShoppingBasket } from "lucide-react";
-import "../assets/css/Cart.css";
+import "../../assets/css/CartTable.css";
 
 const ContinueShoppingButton = ({ onClick }: { onClick: () => void }) => {
   return (

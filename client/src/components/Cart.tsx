@@ -5,7 +5,8 @@ import { CartContext } from "../contexts/CartContext";
 import CheckoutPopup from "./CheckoutPopup";
 import CartTable from "./CartTable";
 import "../assets/css/Cart.css";
-import ContinueShoppingButton from "./ContinueShoppingButton";
+import ContinueShoppingButton from "./buttons/ContinueShoppingButton";
+import ClearCartButton from "./buttons/ClearCartButton";
 
 const Cart = () => {
   const { cart, dispatch } = useContext(CartContext);
@@ -27,16 +28,9 @@ const Cart = () => {
           <CartTable />
           <div className="total">Sub-total: ${subtotal()}</div>
           <div className="btn-container">
+            <ClearCartButton onClick={() => dispatch({ type: "CLEAR" })} />
             <div>
               <ContinueShoppingButton onClick={() => navigate(-1)} />
-            </div>
-            <div>
-              <button
-                className="clear-cart-btn"
-                onClick={() => dispatch({ type: "CLEAR" })}
-              >
-                CLEAR CART &nbsp; <CircleX />
-              </button>
             </div>
             <div className="checkout-button">
               <CheckoutPopup />

@@ -37,6 +37,10 @@
   font-weight: bold;
 }
 
+.clear-cart-btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
 .total {
   display: flex;
   justify-content: flex-end;
