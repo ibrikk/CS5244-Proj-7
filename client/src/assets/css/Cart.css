@@ -36,3 +36,10 @@
   cursor: pointer;
   font-weight: bold;
 }
+
+.total {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+  padding: 1rem 1rem 0 0;
+}
