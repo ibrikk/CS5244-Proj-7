@@ -3,30 +3,17 @@ import { BookItem, ShoppingCartItem } from "../Types";
 import { CartContext } from "../contexts/CartContext";
 import { CartTypes } from "../reducers/CartReducer";
 import "../assets/css/CartTable.css";
-import noimage from "../assets/images/books/no-image.jpg";
-
-const getBookImageUrl = (book: BookItem): string => {
-  let filename =
-    book.title.toLowerCase().replace(/ /g, "-").replace(/'/g, "") + ".gif";
-  try {
-    return require(`../assets/images/books/${filename}`);
-  } catch (_) {
-    return require("../assets/images/books/no-image.jpg");
-  }
-};
-
+import { findImageByBookId } from "../Util";
 const CartTable: React.FC = () => {
   const { cart, dispatch } = useContext(CartContext);
 
   const handleIncrement = (bookId: number) => {
-    dispatch({ type: CartTypes.ADD, payload: bookId });
+    dispatch({ type: CartTypes.ADD, id: bookId });
   };
 
   const handleDecrement = (bookId: number) => {
-    dispatch({ type: CartTypes.REMOVE, payload: bookId });
+    dispatch({ type: CartTypes.REMOVE, id: bookId });
   };
-
-  console.log(cart);
 
   return (
     <div className="cart-table">
@@ -40,7 +27,11 @@ const CartTable: React.FC = () => {
           <React.Fragment key={item.id}>
             <li>
               <div className="cart-book-image">
-                <img className="cart2" src={noimage} alt={item.items.title} />
+                <img
+                  className="cart2"
+                  src={findImageByBookId(item.id)}
+                  alt={item.items.title}
+                />
               </div>
               <div className="cart-book-title">{item.items.title}</div>
               <div className="cart-book-price">
@@ -48,8 +39,7 @@ const CartTable: React.FC = () => {
               </div>
               <div className="cart-book-quantity">
                 <button
-                  onClick={() => console.log("decrement")}
-                  //   onClick={() => handleDecrement(item.quantity)}
+                  onClick={() => handleDecrement(item.id)}
                   className="icon-button dec-arrow-button"
                 >
                   <i className="fas fa-chevron-left"></i>
@@ -58,8 +48,7 @@ const CartTable: React.FC = () => {
                   &nbsp;&nbsp;{item.quantity}&nbsp;&nbsp;
                 </span>
                 <button
-                  onClick={() => console.log("increment")}
-                  //   onClick={() => handleIncrement(item.quantity)}
+                  onClick={() => handleIncrement(item.id)}
                   className="icon-button inc-arrow-button"
                 >
                   <i className="fas fa-chevron-right"></i>
