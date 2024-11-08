@@ -16,8 +16,8 @@ const CategoryNavBar: React.FC<CategoryNavBarProps> = ({ toggleSignIn }) => {
   const isActive = (category: string) => categoryName === category;
 
   return (
-    <nav className="grid grid-full">
-      <div className="search-bar">
+    <div className="grid grid-full nav">
+      <div className="search-bar-category">
         <form action="/category">
           <input type="text" className="search-input" placeholder="Search..." />
         </form>
@@ -32,11 +32,11 @@ const CategoryNavBar: React.FC<CategoryNavBarProps> = ({ toggleSignIn }) => {
               isActive(category.name) ? "selected-category" : "category-link"
             }
           >
-            {category.name}
+            <p className="category-text">{category.name}</p>
           </Link>
         ))}
       </div>
-    </nav>
+    </div>
   );
 };
 

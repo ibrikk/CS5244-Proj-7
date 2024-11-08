@@ -130,6 +130,27 @@ nav {
   gap: 20px;
 }
 
+.nav {
+  background-color: var(--secondary-background-color);
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  grid-template-rows: repeat(3, 0.6fr);
+}
+
+@media (min-width: 490px) and (max-width: 700px) {
+  .nav {
+    grid-template-rows: repeat(4, 0.7fr);
+  }
+}
+
+@media (max-width: 490px) {
+  .nav {
+    grid-template-rows: repeat(5, 1fr);
+  }
+}
+
 .color-neutral {
   color: var(--neutral-color);
 }

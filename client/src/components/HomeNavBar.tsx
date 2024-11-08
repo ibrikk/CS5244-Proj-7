@@ -34,7 +34,7 @@ const HomeNavBar: React.FC<HomeNavBarProps> = ({ toggleSignIn }) => {
           ))}
         </ul>
       </div>
-      <div className="search-bar">
+      <div className="search-bar-homepage">
         <form action="/category">
           <input type="text" className="search-input" placeholder="Search..." />
         </form>
