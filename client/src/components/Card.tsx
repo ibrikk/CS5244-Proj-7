@@ -52,17 +52,20 @@ const Card: React.FC<CardProps> = ({ book, isHomePage }) => {
       </div>
       <div className="year-author">
         <p className="non-break">{title}</p>
-        <p className="book-author">{author}</p>
+        {!isHomePage && <p className="book-author">{author}</p>}
       </div>
       <div className="price-add">
-        <p>{asDollarsAndCents(price)}</p>
         {!isHomePage && (
-          <button
-            className={`add-to-cart-btn ${isClicked ? "clicked" : ""}`}
-            onClick={() => addBookToCart()}
-          >
-            Add to cart
-          </button>
+          <>
+            <p>{asDollarsAndCents(price)}</p>
+
+            <button
+              className={`add-to-cart-btn ${isClicked ? "clicked" : ""}`}
+              onClick={() => addBookToCart()}
+            >
+              Add to cart
+            </button>
+          </>
         )}
       </div>
     </div>
