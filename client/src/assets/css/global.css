@@ -187,3 +187,13 @@ nav {
   text-align: start;
   font-weight: bold;
 }
+
+.non-break-homepage {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: block;
+  text-align: start;
+  font-style: italic;
+}

@@ -51,7 +51,9 @@ const Card: React.FC<CardProps> = ({ book, isHomePage }) => {
         )}
       </div>
       <div className="year-author">
-        <p className="non-break">{title}</p>
+        <p className={isHomePage ? "non-break-homepage" : "non-break"}>
+          {title}
+        </p>
         {!isHomePage && <p className="book-author">{author}</p>}
       </div>
       <div className="price-add">
