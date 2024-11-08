@@ -171,8 +171,9 @@
 }
 
 .book-image {
-  max-height: 200px;
-  object-fit: contain;
+  height: 200px;
+  width: 160px;
+  object-fit: cover;
 }
 
 .view-btn {
