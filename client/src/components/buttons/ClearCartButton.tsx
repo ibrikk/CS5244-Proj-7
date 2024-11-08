@@ -1,14 +1,12 @@
 import { CircleX } from "lucide-react";
 import "../../assets/css/CartTable.css";
 
-const ClearCartButton = ({ onClick }: { onClick: () => void }) => {
+export default function ClearCartButton({ onClick }: { onClick: () => void }) {
   return (
-    <div>
+    <div className="clear-cart-container">
       <button className="clear-cart-btn" onClick={onClick}>
-        Clear Cart &nbsp; <CircleX />
+        Clear Cart &nbsp; <CircleX className="ml-2" />
       </button>
     </div>
   );
-};
-
-export default ClearCartButton;
+}

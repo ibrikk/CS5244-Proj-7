@@ -26,10 +26,10 @@ const Cart = () => {
       <h1 className="cart-heading">Items in Your Cart</h1>
       {cart.length !== 0 ? (
         <>
+          <ClearCartButton onClick={() => dispatch({ type: "CLEAR" })} />
           <CartTable />
           <div className="total">Sub-total: {subtotal()}</div>
           <div className="btn-container">
-            <ClearCartButton onClick={() => dispatch({ type: "CLEAR" })} />
             <div>
               <ContinueShoppingButton onClick={() => navigate(-1)} />
             </div>
