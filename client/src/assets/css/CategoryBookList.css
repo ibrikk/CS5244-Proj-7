@@ -64,7 +64,7 @@
 }
 
 .add-to-cart-btn:hover {
-  background-color: var(--primary-color-dark); /* Slightly brighter orange */
+  background-color: var(--primary-color-dark);
 }
 
 .not-found {
@@ -75,7 +75,7 @@
 }
 
 .add-to-cart-btn.clicked {
-  background-color: #ff784e; /* Slightly brighter orange */
-  transform: scale(1.1); /* Grows slightly on click */
-  box-shadow: 0 0 15px rgba(255, 120, 78, 0.6); /* Glow effect */
+  background-color: #ff784e;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 120, 78, 0.6);
 }
