@@ -136,18 +136,30 @@ nav {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  grid-template-rows: repeat(3, 0.6fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
-@media (min-width: 490px) and (max-width: 700px) {
+@media (max-width: 1340px) {
   .nav {
-    grid-template-rows: repeat(4, 0.7fr);
+    grid-template-rows: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 490px) {
+@media (min-width: 490px) and (max-width: 684px) {
+  .nav {
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 384px) and (max-width: 490px) {
   .nav {
     grid-template-rows: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 384px) {
+  .nav {
+    grid-template-rows: repeat(6, 1fr);
   }
 }
 

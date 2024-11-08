@@ -23,7 +23,7 @@ const CategoryNavBar: React.FC<CategoryNavBarProps> = ({ toggleSignIn }) => {
         </form>
         <span className="material-symbols-outlined search-icon">search</span>
       </div>
-      <div className="homepage-categories" onClick={toggleSignIn}>
+      <div className="categorypage-categories" onClick={toggleSignIn}>
         {categoryList.map((category: CategoryItem) => (
           <Link
             key={category.categoryId}
