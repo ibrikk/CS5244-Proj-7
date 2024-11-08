@@ -1,5 +1,4 @@
 import React, { createContext, useReducer, useEffect, ReactNode } from "react";
-import axios from "axios";
 import { CategoryItem } from "../Types";
 
 // Define action types
