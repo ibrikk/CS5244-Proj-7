@@ -18,7 +18,7 @@ import imaginedCommunities from "./assets/images/books/imagined communities.jpg"
 // Best Sellers
 import taytay from "./assets/images/books/taylor_swift.jpg";
 import welcome from "./assets/images/books/welcome_to_the_club.jpg";
-import dancing from "./assets/images/books/dancing_with_cats.jpg";
+// import dancing from "./assets/images/books/dancing_with_cats.jpg";
 import ablaze from "./assets/images/books//ablaze.jpg";
 
 // Trending
@@ -50,7 +50,7 @@ import worldWalkers from "./assets/images/books/World_of_walkers.jpg";
 // Business
 import zeroToOne from "./assets/images/books/startup.jpg";
 import startupWife from "./assets/images/books/Startup_Wife.jpg";
-import ceoMind from "./assets/images/books/CEO Mind.gif";
+import ceoMind from "./assets/images/books/mind_of_ceo.jpg";
 import wolrdBusiness from "./assets/images/books/worldBusiness.jpg";
 import britishBusinessman from "./assets/images/books/britishBusinessman.jpg";
 
@@ -121,7 +121,7 @@ const imageMap: { [key: string]: { [key: number]: string } } = {
   "Best Sellers": {
     1013: taytay,
     1014: welcome,
-    1015: dancing,
+    // 1015: dancing,
     1016: ablaze,
   },
   Trending: {
